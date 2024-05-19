@@ -9,9 +9,11 @@ import 'firebase_options.dart';
 
 // DATA PARA USAR CON RESOCODERE
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 Future<void> main() async {
   // Firebase Instance
+  var cloud_storage = FirebaseFirestore.instance;
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -21,6 +23,7 @@ Future<void> main() async {
   // Ver utilidad de estas iniciaciones.
 }
 
+//db = FirebaseFirestore.instance;
 // Contrato para usar Firebase Authethication Service
 late final InterfaceAuthFacade _authFacade;
 
