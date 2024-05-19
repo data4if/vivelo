@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:vivelo/domain/user/auth/auth_failure.dart';
+import 'package:vivelo/domain/auth/auth_failure.dart';
 import 'package:vivelo/domain/user/email_address.dart';
 import 'package:vivelo/domain/user/user_password.dart';
 
@@ -16,8 +16,4 @@ abstract class InterfaceAuthFacade {
   });
   // Iniciar session utilizando una cuenta en alquiler/tennad
   Future<Either<AuthFailure, Unit>> signInWithGoogle();
-  // Iniciar futuro incierto
-  Future<Either<AuthFailure, Unit>> signInWithFacebook();
-  // Negativismo
-  Future<Either<AuthFailure, Unit>> signInWithAppleId();
 }

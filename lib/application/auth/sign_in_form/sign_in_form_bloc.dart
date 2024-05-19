@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:vivelo/domain/user/auth/auth_failure.dart';
-import 'package:vivelo/domain/user/auth/interface_auth_contract.dart';
+import 'package:vivelo/domain/auth/auth_failure.dart';
+import 'package:vivelo/domain/auth/interface_auth_facade.dart';
 import 'package:vivelo/domain/user/email_address.dart';
 import 'package:vivelo/domain/user/user_password.dart';
 
@@ -20,8 +20,9 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     SignInFormEvent event,
   ) async* {
     yield* event.map(
-      // Datos de entrada
+      // Datos de entrada - No reacciona hasta que se presione
       emailChanged: _handleEmailChanged,
+      // Datos de entrada - No reacciona hasta que se presione
       passwordChanged: _handlePasswordChanged,
       // Manejar en la logica de registro -> En registro!?
       registerWithEmailAndPasswordPressed: _handleRegisterWithEmailAndPassword,
@@ -29,8 +30,6 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       signInWithEmailAndPasswordPressed: _handleSignInWithEmailAndPassword,
       // Registro con identidades generadas
       signInWithGooglePressed: _handleSignInWithGoogle,
-      signInWhitFacebookPressed: _handleSignInWithFacebook,
-      signInWhitAppleIdPressed: _handleSignInAppleId,
     );
   }
 
@@ -70,47 +69,23 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       failureOrSuccess = await _authFacade.registerWithEmailAndPassword(
           emailAddress: state.emailAddress, password: state.password);
       // Actualizar el estado
-    } else {
-      // Accion en caso contrario, Indigar cual fue la falla
-      // Legado detectar los tipos de falla o las respuesta en tiempo de inicio de session.
-      failureOrSuccess =
-          left(const AuthFailure.invalidEmailAndPasswordCombination());
     }
+    // Ver que paso aqui - revisar bloc de fuente
+    failureOrSuccess = left(AuthFailure.serverError());
+    // Investiga y leer el codigo con detenimiento
     yield state.copyWith(
         isSubmitting: false,
         showErrorMessages: true,
         authFailureOrSuccessOption: optionOf(failureOrSuccess));
   }
+}
 
-  Stream<SignInFormState> _handleSignInWithGoogle(
-      SignInWithGooglePressed e) async* {
-    yield state.copyWith(
-        isSubmitting: true, authFailureOrSuccessOption: none());
-    final failureOrSuccess = await _authFacade.signInWithGoogle();
-    yield state.copyWith(
-        isSubmitting: false,
-        authFailureOrSuccessOption: Some(failureOrSuccess));
-  }
-
-  Stream<SignInFormState> _handleSignInWithFacebook(
-      SignInWithFacebookPressed e) async* {
-    yield state.copyWith(
-        isSubmitting: true, authFailureOrSuccessOption: none());
-    final failureOrSuccess = await _authFacade.signInWithFacebook();
-    yield state.copyWith(
-        isSubmitting: false,
-        authFailureOrSuccessOption: Some(failureOrSuccess));
-  }
-
-  Stream<SignInFormState> _handleSignInAppleId(
-      signInWhitAppleIdPressed e) async* {
-    yield state.copyWith(
-        isSubmitting: true, authFailureOrSuccessOption: none());
-    final failureOrSuccess = await _authFacade.signInWithFacebook();
-    yield state.copyWith(
-        isSubmitting: false,
-        authFailureOrSuccessOption: Some(failureOrSuccess));
-  }
+Stream<SignInFormState> _handleSignInWithGoogle(
+    SignInWithGooglePressed e) async* {
+  yield state.copyWith(isSubmitting: true, authFailureOrSuccessOption: none());
+  final failureOrSuccess = await _authFacade.signInWithGoogle();
+  yield state.copyWith(
+      isSubmitting: false, authFailureOrSuccessOption: Some(failureOrSuccess));
 
   // METODO GLOBAL DE HIGH ORDER FUNCTIONS
   // No voy a utilizar las funcion de alto nivel, por que mi proceso de validacion
@@ -122,7 +97,8 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     }) forwardCall,
   ) async* {
     // VALIDACION DE EMAIL Y CONTRASENA
-    //Option<Either<AuthFailure, Unit>> failureOrSuccess;
+    //Option<Either<AuthFailure, Unit>>
+    // failureOrSuccess;
     Either<AuthFailure, Unit> failureOrSuccess;
     final isEmailValid = state.emailAddress.isValid();
     final isPasswordValid = state.password.isValid();

@@ -13,7 +13,6 @@ dependencies:
   equatable: ^2.0.3
   cupertino_icons: ^1.0.6
   country_code_picker: ^3.0.0
-  get_it: ^7.6.9
   go_router: ^13.2.4
   dartz: ^0.10.1
   freezed_annotation: ^2.4.1
@@ -21,9 +20,16 @@ dependencies:
   freezed: ^2.5.2 #// Evita crear codigo boilerplate para la deserealization y otros metodos que deben existir en un ValueObject
   either_dart: ^1.0.0 # Add this line
   social_login_buttons: ^1.0.7
+  #// Firebase y Firestore 
   firebase_core: ^2.31.0
   firebase_auth: ^4.19.5
   cloud_firestore: ^4.17.3
+  google_sign_in: ^6.2.1
+  #// Localizador de servicios
+  get_it: ^7.6.9
+  # Inyectores de dependencias
+  injectable: ^2.4.2
+  injectable_generator: ^2.6.1
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
+import 'package:vivelo/domain/core/value_errors.dart';
 import 'package:vivelo/domain/core/value_failure.dart';
 
 @immutable
@@ -9,6 +10,10 @@ abstract class ValueObject<T> {
   Either<ValueFailure<T>, T> get value;
 
   bool isValid() => value.isRight();
+
+  T getOrCrash() {
+    return value.fold((l) => throw ValueErrors(l), (r) => r);
+  }
 
   @override
   bool operator ==(Object o) {

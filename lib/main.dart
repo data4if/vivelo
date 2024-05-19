@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vivelo/application/auth/sign_in_form/sign_in_form_bloc.dart';
-import 'package:vivelo/domain/user/auth/interface_auth_contract.dart';
+import 'package:vivelo/domain/auth/interface_auth_facade.dart';
 import 'package:vivelo/configuration/theme/app_theme.dart';
 import 'package:vivelo/configuration/router/app_router.dart';
 import 'package:firebase_core/firebase_core.dart';
