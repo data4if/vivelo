@@ -53,13 +53,13 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCB77PR-jUX9cyTJkXxADrJTyYyuPhMSqA',
-    appId: '1:61919002674:web:523a77ecf2c5ef970efc2b',
-    messagingSenderId: '61919002674',
-    projectId: 'vivelo-52d01',
-    authDomain: 'vivelo-52d01.firebaseapp.com',
-    storageBucket: 'vivelo-52d01.appspot.com',
-    measurementId: 'G-04MKZZ895V',
+    apiKey: 'AIzaSyCSOj_Ak4o643GAmwnIgUSdUhwNHbhN5xU',
+    appId: '1:941010946919:web:1679fe871a6bb7f1eb3dc2',
+    messagingSenderId: '941010946919',
+    projectId: 'vivelo-maracaibo',
+    authDomain: 'vivelo-maracaibo.firebaseapp.com',
+    storageBucket: 'vivelo-maracaibo.appspot.com',
+    measurementId: 'G-NBFNZZ070S',
   );
 
 }

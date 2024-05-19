@@ -7,11 +7,16 @@ import 'package:vivelo/configuration/router/app_router.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
+// DATA PARA USAR CON RESOCODERE
+import 'package:firebase_auth/firebase_auth.dart';
+
 Future<void> main() async {
   // Firebase Instance
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
   runApp(const BlocsProviders());
   // Ver utilidad de estas iniciaciones.
 }
