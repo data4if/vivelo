@@ -8,7 +8,9 @@ import 'package:vivelo/injection.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await setup();
+  // Configuracion para el uso de inyeccion de dependencias
+  setup();
+  // Probablemente se edite esta linea
   runApp(const BlocsProviders());
   // Ver utilidad de estas iniciaciones.
 }
