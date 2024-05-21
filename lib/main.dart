@@ -4,27 +4,15 @@ import 'package:vivelo/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:vivelo/domain/auth/interface_auth_facade.dart';
 import 'package:vivelo/configuration/theme/app_theme.dart';
 import 'package:vivelo/configuration/router/app_router.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+import 'package:vivelo/injection.dart';
 
-// DATA PARA USAR CON RESOCODERE
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-
-Future<void> main() async {
-  // Firebase Instance
-  var cloud_storage = FirebaseFirestore.instance;
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
+  await configureDependencies();
   runApp(const BlocsProviders());
   // Ver utilidad de estas iniciaciones.
 }
 
-//db = FirebaseFirestore.instance;
-// Contrato para usar Firebase Authethication Service
 late final InterfaceAuthFacade _authFacade;
 
 // Clase personalizada

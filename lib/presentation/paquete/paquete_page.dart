@@ -42,9 +42,10 @@ class _PaquetePageState extends State<PaquetePage> {
         ],
       ),
     );
+
     return Scaffold(
       appBar: AppBar(),
-      //drawer: HomeMobileDrawer,
+      drawer: HomeMobileDrawer,
       body: Container(
         color: Colors.grey,
       ),

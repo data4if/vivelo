@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:vivelo/domain/core/value_failure.dart';
 import 'package:vivelo/domain/auth/auth_failure.dart';
 import 'package:vivelo/domain/auth/interface_auth_facade.dart';
 import 'package:vivelo/domain/user/email_address.dart';

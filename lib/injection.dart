@@ -1,10 +1,8 @@
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-import 'package:vivelo/injection.config.dart';
+import 'injection.config.dart';
 
-final GetIt getIt = GetIt.instance;
+final locator = GetIt.instance;
 
-@injectableInit
-void configureInjection(String env) {
-  $initGetIt(getIt, environment: env);
-}
+@InjectableInit()
+Future<void> configureDependencies() async => await $InitGetIt(locator);

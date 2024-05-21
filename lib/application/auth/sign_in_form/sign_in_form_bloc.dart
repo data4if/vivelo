@@ -6,19 +6,17 @@ import 'package:vivelo/domain/auth/interface_auth_facade.dart';
 import 'package:vivelo/domain/auth/auth_failure.dart';
 import 'package:vivelo/domain/user/email_address.dart';
 import 'package:vivelo/domain/user/user_password.dart';
-import 'package:injectable/injectable.dart';
 
 part 'sign_in_form_event.dart';
 part 'sign_in_form_state.dart';
 part 'sign_in_form_bloc.freezed.dart';
 
-@injectable
 class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
+  // Contrato para la autencacion
   final InterfaceAuthFacade _authFacade;
-
+  // Inicia un estado en el bloc
   SignInFormBloc(this._authFacade) : super(SignInFormState.initial());
-
-  @override
+  //@override
   Stream<SignInFormState> mapEventToState(
     SignInFormEvent event,
   ) async* {
@@ -59,6 +57,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     );
   }
 
+  // Dp not repeat your code
   Stream<SignInFormState> _performActionOnAuthFacadeWithEmailAndPassword(
     Future<Either<AuthFailure, Unit>> Function({
       required EmailAddress emailAddress,
@@ -66,7 +65,6 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     }) forwardedCall,
   ) async* {
     Either<AuthFailure, Unit> failureOrSuccess;
-
     final isEmailValid = state.emailAddress.isValid();
     final isPasswordValid = state.password.isValid();
 
@@ -80,12 +78,14 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
         emailAddress: state.emailAddress,
         password: state.password,
       );
-
-      yield state.copyWith(
-        isSubmitting: false,
-        showErrorMessages: true,
-        authFailureOrSuccessOption: optionOf(failureOrSuccess),
-      );
     }
+    // Remanente para limpiar y entender el optionOf
+    failureOrSuccess = const AuthFailure.invalidEmailAndPasswordCombination()
+        as Either<AuthFailure, Unit>;
+    yield state.copyWith(
+      isSubmitting: false,
+      showErrorMessages: true,
+      authFailureOrSuccessOption: optionOf(failureOrSuccess),
+    );
   }
 }

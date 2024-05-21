@@ -9,13 +9,12 @@ class PhoneNumberVerificationWidget extends StatefulWidget {
 
 class _PhoneNumberVerificationWidgetState
     extends State<PhoneNumberVerificationWidget> {
-  late CountryCode _selectedCountry = CountryCode.fromCountryCode('US');
+  late CountryCode _selectedCountry = CountryCode.fromCountryCode('VE');
   TextEditingController _phoneNumberController = TextEditingController();
-
   Future<void> _verifyPhoneNumber() async {
     String phoneNumber = _phoneNumberController.text.trim();
     if (phoneNumber.isNotEmpty) {
-      String fullPhoneNumber = '+' + _selectedCountry.toString() + phoneNumber;
+      //String fullPhoneNumber = '+' + _selectedCountry.toString() + phoneNumber;
 
       // Make your API request here using fullPhoneNumber
       // Example:
@@ -23,8 +22,7 @@ class _PhoneNumberVerificationWidgetState
       http.Response response = await http.post(
         'YOUR_API_ENDPOINT',
         body: {'phone': fullPhoneNumber},
-      );
-      
+      ) 
       // Handle response according to your application's requirements
       */
     } else {
