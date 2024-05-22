@@ -16,7 +16,6 @@ class FirebaseAuthFacade implements InterfaceAuthFacade {
   final GoogleSignIn _googleSignIn;
 
   // Inicializar
-  @injectable
   FirebaseAuthFacade(
     this._firebaseAuth,
     this._googleSignIn,
