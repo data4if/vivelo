@@ -1,6 +1,5 @@
 // Either option to create smart entities
 import 'package:dartz/dartz.dart';
-import 'package:injectable/injectable.dart';
 //import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:vivelo/domain/core/value_validator.dart';
@@ -13,7 +12,6 @@ import '../core/value_object.dart';
 /// It validates the input string and either holds a `ValueFailure<String>` if the validation fails,
 /// or the valid email address string.
 @immutable
-@injectable
 class EmailAddress extends ValueObject<String> {
   // Return
   final Either<ValueFailure<String>, String> value;

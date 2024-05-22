@@ -8,7 +8,6 @@ import 'package:vivelo/domain/auth/interface_auth_facade.dart';
 import 'package:vivelo/domain/user/email_address.dart';
 import 'package:vivelo/domain/user/user_password.dart';
 
-@Named("Autenticacion")
 @Injectable(as: InterfaceAuthFacade)
 class FirebaseAuthFacade implements InterfaceAuthFacade {
   // Constantes - Infraestructura
@@ -21,8 +20,6 @@ class FirebaseAuthFacade implements InterfaceAuthFacade {
     this._googleSignIn,
   );
 
-  @Named("Registro")
-  @factoryMethod
   @override
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword(
       {required EmailAddress emailAddress, required Password password}) async {
@@ -41,8 +38,6 @@ class FirebaseAuthFacade implements InterfaceAuthFacade {
     }
   }
 
-  @Named("Sesion")
-  @factoryMethod
   @override
   Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword(
       {required EmailAddress emailAddress, required Password password}) async {
@@ -61,8 +56,6 @@ class FirebaseAuthFacade implements InterfaceAuthFacade {
     }
   }
 
-  @Named("GoogleSesion")
-  @factoryMethod
   @override
   Future<Either<AuthFailure, Unit>> signInWithGoogle() async {
     // TODO: implement signInWithGoogle
