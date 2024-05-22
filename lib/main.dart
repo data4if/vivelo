@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:vivelo/configuration/theme/app_theme.dart';
 import 'package:vivelo/configuration/router/app_router.dart';
-import 'package:vivelo/infrastructure/firebase_core/firebase_service.dart';
 import 'package:vivelo/injection.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   configureInjecttionSetup();
-  FirebaseService.init();
   runApp(MobileApp());
 }
 

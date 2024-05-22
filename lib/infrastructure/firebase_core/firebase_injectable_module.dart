@@ -6,12 +6,13 @@ import 'package:vivelo/infrastructure/firebase/firebase_auth_facade.dart';
 
 @module
 abstract class FirebaseAuthModule {
+  //
   @lazySingleton
   FirebaseAuth get firebaseAuth => FirebaseAuth.instance;
-
+  //
   @lazySingleton
   GoogleSignIn get googleSignIn => GoogleSignIn();
-
+  //
   @Singleton()
   InterfaceAuthFacade get authFacade => FirebaseAuthFacade(
         firebaseAuth,

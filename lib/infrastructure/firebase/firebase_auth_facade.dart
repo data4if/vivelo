@@ -8,7 +8,7 @@ import 'package:vivelo/domain/auth/interface_auth_facade.dart';
 import 'package:vivelo/domain/user/email_address.dart';
 import 'package:vivelo/domain/user/user_password.dart';
 
-@Injectable(as: InterfaceAuthFacade)
+@Singleton()
 class FirebaseAuthFacade implements InterfaceAuthFacade {
   // Constantes - Infraestructura
   final FirebaseAuth _firebaseAuth;
