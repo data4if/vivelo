@@ -5,8 +5,8 @@ import 'package:vivelo/infrastructure/firebase_core/firebase_service.dart';
 import 'package:vivelo/injection.dart';
 
 void main() async {
-  FirebaseService.init();
   configureInjecttionSetup();
+  FirebaseService.init();
   runApp(MobileApp());
 }
 

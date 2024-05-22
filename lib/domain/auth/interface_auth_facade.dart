@@ -5,7 +5,6 @@ import 'package:vivelo/domain/auth/auth_failure.dart';
 import 'package:vivelo/domain/user/email_address.dart';
 import 'package:vivelo/domain/user/user_password.dart';
 
-@injectable
 abstract class InterfaceAuthFacade {
   // Registrar con email y passwaord
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({

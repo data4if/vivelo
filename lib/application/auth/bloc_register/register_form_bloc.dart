@@ -6,7 +6,7 @@ part 'register_form_event.dart';
 part 'register_form_state.dart';
 part 'register_form_bloc.freezed.dart';
 
-@Injectable()
+//@injectable
 class RegisterFormBloc extends Bloc<RegisterFormEvent, RegisterFormState> {
   RegisterFormBloc() : super(_Initial()) {
     on<RegisterFormEvent>((event, emit) {

@@ -12,7 +12,7 @@ part 'sign_in_form_event.dart';
 part 'sign_in_form_state.dart';
 part 'sign_in_form_bloc.freezed.dart';
 
-@Injectable()
+//@injectable
 class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   // Contrato para la autencacion
   final InterfaceAuthFacade _authFacade;
