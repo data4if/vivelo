@@ -50,7 +50,6 @@ class MobileApp extends StatelessWidget {
     // Enxplorar codigo comentado:
     //final appRouter = context.watch<RouterSimpleCubit>().state;
     //final appTheme = context.watch<ThemeCubit>().state;
-
     final user = getIt<FirebaseAuthFacade>();
     user.signInWithEmailAndPassword(
         emailAddress: EmailAddress("data4if@gmail.com"),
