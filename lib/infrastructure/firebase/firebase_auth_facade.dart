@@ -2,21 +2,28 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:injectable/injectable.dart';
 import 'package:vivelo/domain/auth/auth_failure.dart';
 import 'package:vivelo/domain/auth/interface_auth_facade.dart';
 import 'package:vivelo/domain/user/email_address.dart';
 import 'package:vivelo/domain/user/user_password.dart';
 
+@Named("Autenticacion")
+@Injectable(as: InterfaceAuthFacade)
 class FirebaseAuthFacade implements InterfaceAuthFacade {
   // Constantes - Infraestructura
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
 
+  // Inicializar
+  @injectable
   FirebaseAuthFacade(
     this._firebaseAuth,
     this._googleSignIn,
   );
 
+  @Named("Registro")
+  @factoryMethod
   @override
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword(
       {required EmailAddress emailAddress, required Password password}) async {
@@ -35,6 +42,8 @@ class FirebaseAuthFacade implements InterfaceAuthFacade {
     }
   }
 
+  @Named("Sesion")
+  @factoryMethod
   @override
   Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword(
       {required EmailAddress emailAddress, required Password password}) async {
@@ -53,6 +62,8 @@ class FirebaseAuthFacade implements InterfaceAuthFacade {
     }
   }
 
+  @Named("GoogleSesion")
+  @factoryMethod
   @override
   Future<Either<AuthFailure, Unit>> signInWithGoogle() async {
     // TODO: implement signInWithGoogle

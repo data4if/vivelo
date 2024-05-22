@@ -1,5 +1,0 @@
-include: package:lint/analysis_option.yaml
-
-analyzer:
-  errors:
-    missing_return: error
