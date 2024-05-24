@@ -11,8 +11,10 @@ abstract class ValueObject<T> {
 
   bool isValid() => value.isRight();
 
+  /// throw [UnexpectedValueError] from [ValueFailure]
+  //id is used in Either - from dartz package to return right -> <T>
   T getOrCrash() {
-    return value.fold((l) => throw ValueErrors(l), (r) => r);
+    return value.fold((l) => throw ValueErrors(l), id);
   }
 
   @override
