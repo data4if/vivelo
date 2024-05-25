@@ -8,6 +8,7 @@ class ValueErrors extends Error {
   // Estamos sobre-escribiendo la clase Error Nativa de dart
   @override
   String toString() {
-    return Error.safeToString('Explicacion de la falla: $_valueFailure');
+    return Error.safeToString(
+        'ValueFailure at unrecoverable point: $_valueFailure');
   }
 }

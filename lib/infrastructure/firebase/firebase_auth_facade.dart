@@ -8,7 +8,7 @@ import 'package:vivelo/domain/auth/interface_auth_facade.dart';
 import 'package:vivelo/domain/user/email_address.dart';
 import 'package:vivelo/domain/user/user_password.dart';
 
-@Singleton()
+//@injectable
 class FirebaseAuthFacade implements InterfaceAuthFacade {
   // Constantes - Infraestructura
   final FirebaseAuth _firebaseAuth;
@@ -59,10 +59,11 @@ class FirebaseAuthFacade implements InterfaceAuthFacade {
   @override
   Future<Either<AuthFailure, Unit>> signInWithGoogle() async {
     // TODO: implement signInWithGoogle
+    // Modificar para validar via link - How to do it?
     try {
       final google_user = await _googleSignIn.signIn();
       if (google_user == null) {
-        return left(AuthFailure.cancelledByUser());
+        return left(const AuthFailure.cancelledByUser());
       }
       final google_authentication = await google_user.authentication;
       final authCredential = GoogleAuthProvider.credential(
@@ -73,6 +74,7 @@ class FirebaseAuthFacade implements InterfaceAuthFacade {
           .signInWithCredential(authCredential)
           .then((r) => right(unit));
     } on PlatformException catch (e) {
+      // CrashAnalityc - para registrar todos los podible errores
       (e.toString());
       return left(const AuthFailure.serverError());
     }
