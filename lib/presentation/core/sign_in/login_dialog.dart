@@ -1,7 +1,7 @@
 import 'package:conoce_alfa/application/auth/bloc_sign_in/sign_in_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:conoce_alfa/configuration/theme/app_theme.dart';
-import 'package:conoce_alfa/presentation/core/dialogs/session_dialog.dart';
+import 'package:conoce_alfa/presentation/core/sign_in/session_dialog.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginDialog extends StatelessWidget {
