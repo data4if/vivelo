@@ -3,11 +3,11 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"flutter_bootstrap.js": "684b783162c0d3af8003c7a334c7a2ec",
-"version.json": "9021fce0b3739cb744c1670aa72f8a45",
+const RESOURCES = {"flutter_bootstrap.js": "ee682d1b56ff436e4162984df13b3441",
+"version.json": "6d8663f1a1a9e7cb3c68af82f3c312f1",
 "index.html": "f1f8e847b28e79dc230edf32543d3355",
 "/": "f1f8e847b28e79dc230edf32543d3355",
-"main.dart.js": "6610d50e575caf5b375870ca93b5974c",
+"main.dart.js": "d9e85bbd22be8ac89412a727f68c3982",
 "flutter.js": "383e55f7f3cce5be08fcf1f3881f585c",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
@@ -369,7 +369,7 @@ const RESOURCES = {"flutter_bootstrap.js": "684b783162c0d3af8003c7a334c7a2ec",
 "assets/shaders/ink_sparkle.frag": "ecc85a2e95f5e9f53123dcaf8cb9b6ce",
 "assets/AssetManifest.bin": "de7e528ceda8a3c3790bd629c3357e4d",
 "assets/fonts/Poppins-Regular.ttf": "093ee89be9ede30383f39a899c485a82",
-"assets/fonts/MaterialIcons-Regular.otf": "f809397fad7b5e9808b036a2f9c34565",
+"assets/fonts/MaterialIcons-Regular.otf": "ee6f6352374a5b1d1b8340e138abf7ac",
 "assets/fonts/Poppins-Bold.ttf": "08c20a487911694291bd8c5de41315ad",
 "assets/assets/images/logo_fomutur.png": "616ab6eb11fcae3dcd92929c5523dc02",
 "assets/assets/images/logo_alcaldia.png": "762b9d378b6a3f0596d3c9f1b04e9331",

@@ -15,11 +15,11 @@ class SessionDialog extends StatelessWidget {
           'Bienvenido!',
           style: TextStyle(color: Colors.white),
         ),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
+        content: ListView(
+          // mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Text(
-              'Por favor ingrese el correo y teléfono con el cual se registró',
+              'Por favor ingrese el correo con y contrasena con el cual se registró',
               style: TextStyle(color: Colors.white),
             ),
             SizedBox(height: 20, width: 20),
@@ -54,11 +54,13 @@ class SessionDialog extends StatelessWidget {
                 return null; // Add more complex password validation if needed
               },
             ),
+            SizedBox(height: 20, width: 20),
             Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SocialLoginButton(
+                    borderRadius: 8,
                     buttonType: SocialLoginButtonType.google,
                     onPressed: () async {},
                   ),
