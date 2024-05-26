@@ -20,6 +20,7 @@ class _EmailVerificationWidgetState extends State<EmailVerificationWidget> {
           keyboardType: TextInputType.emailAddress,
           decoration: InputDecoration(
             labelText: 'Email',
+            prefix: Icon(Icons.mail),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15.0), // Radio de los bordes
               //borderSide: BorderSide.none, // Elimina el borde lateral

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:vivelo/presentation/widgets/widget_id.dart';
-import 'package:vivelo/presentation/widgets/widget_mail.dart';
-import 'package:vivelo/presentation/widgets/widget_phone.dart';
+import 'package:conoce_alfa/presentation/widgets/widget_id.dart';
+import 'package:conoce_alfa/presentation/widgets/widget_mail.dart';
+import 'package:conoce_alfa/presentation/widgets/widget_phone.dart';
 
 class RegisterPage extends StatefulWidget {
   @override

@@ -3,15 +3,15 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:injectable/injectable.dart';
 
-//@module
+@module
 abstract class FirebaseCoreModule {
-  //
-  //@LazySingleton()
+  //Solo se usa durante la autenticacion o registro
+  @LazySingleton()
   FirebaseAuth get firebaseAuth => FirebaseAuth.instance;
-  //
-  //@LazySingleton()
+  //Solo se usa durante la autenticacion o registro
+  @LazySingleton()
   GoogleSignIn get googleSignIn => GoogleSignIn();
-  //
-  //@LazySingleton()
+  // Razonamiento necesito este objeto global activo SIEMPRE
+  @Singleton()
   FirebaseFirestore get firestore => FirebaseFirestore.instance;
 }

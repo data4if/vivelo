@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:vivelo/presentation/views.dart';
+import 'package:conoce_alfa/presentation/views.dart';
 
 class PaquetePage extends StatefulWidget {
   const PaquetePage({super.key});

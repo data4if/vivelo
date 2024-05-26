@@ -1,4 +1,4 @@
-import 'package:vivelo/domain/core/value_failure.dart';
+import 'package:conoce_alfa/domain/core/value_failure.dart';
 
 class ValueErrors extends Error {
   // Declaracion de los errores concentrados en CORE

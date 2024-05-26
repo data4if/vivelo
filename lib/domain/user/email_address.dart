@@ -2,7 +2,7 @@
 import 'package:dartz/dartz.dart';
 //import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
-import 'package:vivelo/domain/core/value_validator.dart';
+import 'package:conoce_alfa/domain/core/value_validator.dart';
 
 // Abstracciones
 import '../core/value_failure.dart';

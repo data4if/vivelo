@@ -3,19 +3,20 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-import 'package:vivelo/domain/auth/interface_auth_facade.dart';
-import 'package:vivelo/domain/auth/auth_failure.dart';
-import 'package:vivelo/domain/user/email_address.dart';
-import 'package:vivelo/domain/user/user_password.dart';
+import 'package:conoce_alfa/domain/auth/interface_auth_facade.dart';
+import 'package:conoce_alfa/domain/auth/auth_failure.dart';
+import 'package:conoce_alfa/domain/user/email_address.dart';
+import 'package:conoce_alfa/domain/user/user_password.dart';
 
-part 'sign_in_form_event.dart';
-part 'sign_in_form_state.dart';
-part 'sign_in_form_bloc.freezed.dart';
+part 'sign_in_event.dart';
+part 'sign_in_state.dart';
+part 'sign_in_bloc.freezed.dart';
 
-//@injectable
+@injectable
 class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   // Contrato para la Autencacion
   final InterfaceAuthFacade _interfaceAuthFacade;
+  // InterfaceAuthFacade get _authFacade => GetIt<InterfaceAuthFacade>();
   // Inicia un estado en el bloc
   SignInFormBloc(this._interfaceAuthFacade) : super(SignInFormState._initial());
   //@override

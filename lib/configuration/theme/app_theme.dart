@@ -4,7 +4,7 @@ class AppTheme {
   // Constante de diseno
   static final Color primaryColor = const Color.fromRGBO(0, 99, 65, 1);
   static final Color accentColor = const Color.fromRGBO(239, 185, 38, 1);
-
+  // Custom Theme
   static ThemeData getThemeData() {
     return ThemeData(
       fontFamily: 'AlcaldiaFont',
@@ -15,8 +15,12 @@ class AppTheme {
         backgroundColor: primaryColor,
         brightness: Brightness.light,
       ),
+      inputDecorationTheme: InputDecorationTheme(
+          border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+      )),
       appBarTheme: AppBarTheme(
-        backgroundColor: accentColor,
+        backgroundColor: primaryColor,
         foregroundColor: Colors.white,
       ),
     );

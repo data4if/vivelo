@@ -1,4 +1,4 @@
-part of 'sign_in_form_bloc.dart';
+part of 'sign_in_bloc.dart';
 
 @freezed
 abstract class SignInFormEvent with _$SignInFormEvent {

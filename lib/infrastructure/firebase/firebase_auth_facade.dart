@@ -3,18 +3,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
-import 'package:vivelo/domain/auth/auth_failure.dart';
-import 'package:vivelo/domain/auth/interface_auth_facade.dart';
-import 'package:vivelo/domain/user/email_address.dart';
-import 'package:vivelo/domain/user/user_password.dart';
+import 'package:conoce_alfa/domain/auth/auth_failure.dart';
+import 'package:conoce_alfa/domain/auth/interface_auth_facade.dart';
+import 'package:conoce_alfa/domain/user/email_address.dart';
+import 'package:conoce_alfa/domain/user/user_password.dart';
 
-//@injectable
 class FirebaseAuthFacade implements InterfaceAuthFacade {
-  // Constantes - Infraestructura
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
 
-  // Inicializar
   FirebaseAuthFacade(
     this._firebaseAuth,
     this._googleSignIn,
@@ -58,8 +55,6 @@ class FirebaseAuthFacade implements InterfaceAuthFacade {
 
   @override
   Future<Either<AuthFailure, Unit>> signInWithGoogle() async {
-    // TODO: implement signInWithGoogle
-    // Modificar para validar via link - How to do it?
     try {
       final google_user = await _googleSignIn.signIn();
       if (google_user == null) {
@@ -74,8 +69,6 @@ class FirebaseAuthFacade implements InterfaceAuthFacade {
           .signInWithCredential(authCredential)
           .then((r) => right(unit));
     } on PlatformException catch (e) {
-      // CrashAnalityc - para registrar todos los podible errores
-      (e.toString());
       return left(const AuthFailure.serverError());
     }
   }

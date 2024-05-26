@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:vivelo/presentation/views.dart';
+import 'package:conoce_alfa/presentation/views.dart';
 
 final app_router = GoRouter(
   routes: [

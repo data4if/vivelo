@@ -1,5 +1,5 @@
-name: "vivelo"
-description: "Vivelo en <Estado>"
+name: "conoce_alfa"
+description: "conoce_alfa | testing - base code"
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
@@ -14,7 +14,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   country_code_picker: ^3.0.0
   go_router: ^13.2.4
-  dartz: ^0.10.1
+  dartz: ^0.10.1 #// Either type Objects
   freezed_annotation: ^2.4.1
   build_runner: ^2.4.9 #//investidar esta dependencia
   freezed: ^2.5.2 #// Evita crear codigo boilerplate para la deserealization y otros metodos que deben existir en un ValueObject
@@ -31,6 +31,7 @@ dependencies:
   injectable: ^2.4.2 
 
 dev_dependencies:
+  # TODO -> Pendientes pruebas de TDD- UseCases - BlackBox
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0

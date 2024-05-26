@@ -9,5 +9,5 @@ export 'widgets/widget_mail.dart';
 export 'widgets/widget_phone.dart';
 
 // Dialogs
-export 'dialogs/login_dialog.dart';
-export 'dialogs/session_dialog.dart';
+export 'core/dialogs/login_dialog.dart';
+export 'core/dialogs/session_dialog.dart';

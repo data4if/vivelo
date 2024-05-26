@@ -14,17 +14,7 @@ class _PhoneNumberVerificationWidgetState
   Future<void> _verifyPhoneNumber() async {
     String phoneNumber = _phoneNumberController.text.trim();
     if (phoneNumber.isNotEmpty) {
-      //String fullPhoneNumber = '+' + _selectedCountry.toString() + phoneNumber;
-
-      // Make your API request here using fullPhoneNumber
-      // Example:
-      /*
-      http.Response response = await http.post(
-        'YOUR_API_ENDPOINT',
-        body: {'phone': fullPhoneNumber},
-      ) 
-      // Handle response according to your application's requirements
-      */
+      // SubmitAction
     } else {
       // Show error message if phone number is empty
       ScaffoldMessenger.of(context).showSnackBar(
@@ -55,6 +45,7 @@ class _PhoneNumberVerificationWidgetState
                 controller: _phoneNumberController,
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.phone),
                   labelText: 'Phone Number',
                   border: OutlineInputBorder(
                     borderRadius:

@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
-import 'package:vivelo/domain/core/value_errors.dart';
-import 'package:vivelo/domain/core/value_failure.dart';
+import 'package:conoce_alfa/domain/core/value_errors.dart';
+import 'package:conoce_alfa/domain/core/value_failure.dart';
 
 @immutable
 abstract class ValueObject<T> {

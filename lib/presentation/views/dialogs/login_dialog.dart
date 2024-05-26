@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vivelo/configuration/theme/app_theme.dart';
-import 'package:vivelo/presentation/dialogs/session_dialog.dart';
+import 'package:conoce_alfa/configuration/theme/app_theme.dart';
+import 'package:conoce_alfa/presentation/core/dialogs/session_dialog.dart';
 
 class LoginDialog extends StatelessWidget {
   @override
