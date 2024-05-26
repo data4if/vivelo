@@ -18,8 +18,7 @@ import 'application/auth/bloc_auth/auth_bloc.dart' as _i4;
 import 'application/auth/bloc_register/register_bloc.dart' as _i3;
 import 'application/auth/bloc_sign_in/sign_in_bloc.dart' as _i8;
 import 'domain/auth/interface_auth_facade.dart' as _i9;
-import 'infrastructure/core/firebase_module.dart' as _i11;
-import 'infrastructure/firebase/firebase_auth_facade.dart' as _i10;
+import 'infrastructure/core/firebase_module.dart' as _i10;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -40,12 +39,8 @@ extension GetItInjectableX on _i1.GetIt {
     gh.lazySingleton<_i7.GoogleSignIn>(() => firebaseCoreModule.googleSignIn);
     gh.factory<_i8.SignInFormBloc>(
         () => _i8.SignInFormBloc(gh<_i9.InterfaceAuthFacade>()));
-    gh.lazySingleton<_i10.FirebaseAuthFacade>(() => _i10.FirebaseAuthFacade(
-          gh<_i6.FirebaseAuth>(),
-          gh<_i7.GoogleSignIn>(),
-        ));
     return this;
   }
 }
 
-class _$FirebaseCoreModule extends _i11.FirebaseCoreModule {}
+class _$FirebaseCoreModule extends _i10.FirebaseCoreModule {}

@@ -1,10 +1,9 @@
+import 'package:conoce_alfa/domain/auth/interface_auth_facade.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:injectable/injectable.dart';
 import 'package:conoce_alfa/domain/auth/auth_failure.dart';
-import 'package:conoce_alfa/domain/auth/interface_auth_facade.dart';
 import 'package:conoce_alfa/domain/user/email_address.dart';
 import 'package:conoce_alfa/domain/user/user_password.dart';
 
