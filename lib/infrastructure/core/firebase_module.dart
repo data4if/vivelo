@@ -12,6 +12,6 @@ abstract class FirebaseCoreModule {
   @LazySingleton()
   GoogleSignIn get googleSignIn => GoogleSignIn();
   // Razonamiento necesito este objeto global activo SIEMPRE
-  @Singleton()
+  @LazySingleton()
   FirebaseFirestore get firestore => FirebaseFirestore.instance;
 }

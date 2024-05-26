@@ -18,6 +18,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   final InterfaceAuthFacade _interfaceAuthFacade;
   // InterfaceAuthFacade get _authFacade => GetIt<InterfaceAuthFacade>();
   // Inicia un estado en el bloc
+  @factoryMethod
   SignInFormBloc(this._interfaceAuthFacade) : super(SignInFormState._initial());
   //@override
   Stream<SignInFormState> mapEventToState(

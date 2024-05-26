@@ -22,6 +22,3 @@ void configureDependencies() {
     GetIt.instance<GoogleSignIn>(),
   ); // Inject GoogleSignIn instance);
 }
-
-// injection.dart
-

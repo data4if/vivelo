@@ -6,7 +6,9 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:conoce_alfa/domain/auth/auth_failure.dart';
 import 'package:conoce_alfa/domain/user/email_address.dart';
 import 'package:conoce_alfa/domain/user/user_password.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton(as: InterfaceAuthFacade)
 class FirebaseAuthFacade implements InterfaceAuthFacade {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
