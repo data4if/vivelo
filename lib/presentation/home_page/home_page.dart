@@ -1,15 +1,15 @@
+import 'package:conoce_alfa/presentation/core/sign_in/session_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:conoce_alfa/presentation/views.dart';
 
-class PaquetePage extends StatefulWidget {
-  const PaquetePage({super.key});
-
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
   @override
-  State<PaquetePage> createState() => _PaquetePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _PaquetePageState extends State<PaquetePage> {
+class _HomePageState extends State<HomePage> {
+  @override
   Widget build(BuildContext context) {
     // Drawer para el menu mobile inicial.
     Drawer HomeMobileDrawer = Drawer(
@@ -20,18 +20,8 @@ class _PaquetePageState extends State<PaquetePage> {
             child: Image.asset('assets/images/logo_fomutur.png'),
           ),
           ListTile(
-            title: Text('Paquetes'),
-            subtitle: Text('Vivelo en maracaibo'),
-            onTap: () => context.go('/'),
-          ),
-          ListTile(
-            title: Text('Registro'),
-            subtitle: Text('Vivelo en maracaibo'),
-            onTap: () => context.go('/register'),
-          ),
-          ListTile(
-            title: Text('Registro'),
-            subtitle: Text('Vivelo en maracaibo'),
+            title: Text('Iniciar Sesion'),
+            subtitle: Text('Conece - Alfa'),
             onTap: () => showDialog(
               context: context,
               builder: (BuildContext context) {
@@ -39,15 +29,24 @@ class _PaquetePageState extends State<PaquetePage> {
               },
             ),
           ),
+          ListTile(
+            title: Text('OPT - 1'),
+            subtitle: Text('Feature waiting'),
+            onTap: () => context.go('/'),
+          ),
+          ListTile(
+            title: Text('OPT - 2'),
+            subtitle: Text('Feature waiting'),
+            onTap: () => {},
+          ),
         ],
       ),
     );
-
     return Scaffold(
       appBar: AppBar(),
       drawer: HomeMobileDrawer,
       body: Container(
-        color: Colors.grey,
+        color: Colors.amber,
       ),
     );
   }
