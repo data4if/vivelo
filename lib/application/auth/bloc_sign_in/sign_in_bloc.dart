@@ -13,16 +13,16 @@ part 'sign_in_state.dart';
 part 'sign_in_bloc.freezed.dart';
 
 @injectable
-class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
+class SignInBloc extends Bloc<SignInEvent, SignInState> {
   // Contrato para la Autencacion
   final InterfaceAuthFacade _interfaceAuthFacade;
   // InterfaceAuthFacade get _authFacade => GetIt<InterfaceAuthFacade>();
   // Inicia un estado en el bloc
   @factoryMethod
-  SignInFormBloc(this._interfaceAuthFacade) : super(SignInFormState._initial());
+  SignInBloc(this._interfaceAuthFacade) : super(SignInBloc._initial());
   //@override
-  Stream<SignInFormState> mapEventToState(
-    SignInFormEvent event,
+  Stream<SignInBloc> mapEventToState(
+    SignInEvent event,
   ) async* {
     yield* event.map(
       emailChanged: (e) async* {

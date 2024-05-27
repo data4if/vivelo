@@ -1,4 +1,5 @@
 import 'package:conoce_alfa/application/auth/bloc_sign_in/sign_in_bloc.dart';
+import 'package:conoce_alfa/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:social_login_buttons/social_login_buttons.dart'; // Import flutter_icons
@@ -7,7 +8,8 @@ import 'package:social_login_buttons/social_login_buttons.dart'; // Import flutt
 class SessionDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<SignInFormBloc, SignInFormState>(
+    return BlocProvider(create: getIt<SingInB>) 
+    BlocConsumer<SignInFormBloc, SignInFormState>(
       listener: (context, state) {
         state.authFailureOrSuccessOption.fold(
           () => {},

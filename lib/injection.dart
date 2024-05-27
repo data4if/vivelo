@@ -17,6 +17,7 @@ final getIt = GetIt.instance;
 )
 void configureDependencies() {
   getIt.init();
+  //TODO: validar el punto en que estor haiendi esto en el injection,config,dart
   FirebaseAuthFacade auth_facade = FirebaseAuthFacade(
     GetIt.instance<FirebaseAuth>(), // Inject FirebaseAuth instance
     GetIt.instance<GoogleSignIn>(),
