@@ -19,9 +19,9 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
   // InterfaceAuthFacade get _authFacade => GetIt<InterfaceAuthFacade>();
   // Inicia un estado en el bloc
   @factoryMethod
-  SignInBloc(this._interfaceAuthFacade) : super(SignInBloc._initial());
+  SignInBloc(this._interfaceAuthFacade) : super(SignInBloc._Initial());
   //@override
-  Stream<SignInBloc> mapEventToState(
+  Stream<SignInState> mapEventToState(
     SignInEvent event,
   ) async* {
     yield* event.map(
@@ -61,7 +61,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     );
   }
 
-  Stream<SignInFormState> _performActionOnAuthFacadeWithEmailAndPassword(
+  Stream<SignInState> _performActionOnAuthFacadeWithEmailAndPassword(
     Future<Either<AuthFailure, Unit>> Function({
       required EmailAddress emailAddress,
       required Password password,
