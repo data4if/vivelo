@@ -1,10 +1,9 @@
 import 'package:conoce_alfa/application/auth/bloc_sign_in/sign_in_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:injectable/injectable.dart';
 import 'package:social_login_buttons/social_login_buttons.dart'; // Import flutter_icons
 
-@injectable // Import ValueFailure
+// Import ValueFailure
 class SessionDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
