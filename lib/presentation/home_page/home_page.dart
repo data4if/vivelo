@@ -18,9 +18,7 @@ class HomePage extends StatelessWidget {
             subtitle: Text('Conece - Alfa'),
             onTap: () => showDialog(
               context: context,
-              builder: (BuildContext context) {
-                return SessionDialog();
-              },
+              builder: (BuildContext context) => SessionDialog(),
             ),
           ),
           ListTile(
