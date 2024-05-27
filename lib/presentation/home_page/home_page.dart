@@ -2,16 +2,10 @@ import 'package:conoce_alfa/presentation/core/sign_in/session_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Drawer para el menu mobile inicial.
+    // Drawer for the initial mobile menu.
     Drawer HomeMobileDrawer = Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -42,11 +36,12 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
+
     return Scaffold(
       appBar: AppBar(),
       drawer: HomeMobileDrawer,
       body: Container(
-        color: Colors.amber,
+        color: Colors.blue,
       ),
     );
   }
